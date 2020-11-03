@@ -1,0 +1,7 @@
+# Ignored files
+/regex.iml
+
+# Ingnored catalogs
+.idea/*
+target/*
+src/test/*

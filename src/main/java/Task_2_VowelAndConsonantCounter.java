@@ -2,9 +2,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class VowelAndConsonantCounter {
-    static void count(String fileName) {
-        Pattern vowels = Pattern.compile("(?iu)[уеыаоэяию]");
+public class Task_2_VowelAndConsonantCounter {
+
+    public static void count(String fileName) {
+        long startTime = System.currentTimeMillis();
+        System.out.println("---Task 2---");
+        Pattern vowels = Pattern.compile("(?iu)[уеыаоэяиюё]");
         Pattern consonants = Pattern.compile("(?iu)[йцкнгшщзхъфвпрлджчсмтьб]");
         List<String> list = FileReader.readFile(fileName);
         int vowelsCounter = 0, consonantsCounter = 0;
@@ -18,8 +21,10 @@ public class VowelAndConsonantCounter {
                 consonantsCounter++;
             }
         }
-        System.out.println("Количество гласных в тексте: " + vowelsCounter);
-        System.out.println("Количество согласных в тексте: " + consonantsCounter);
+        System.out.println("Number of vowels in the text: " + vowelsCounter);
+        System.out.println("Number of consonants in the text: " + consonantsCounter);
+        long endTime = System.currentTimeMillis();
+        System.out.println("Took time: " + (endTime - startTime) / 1000d + " sec.");
     }
 }
 
